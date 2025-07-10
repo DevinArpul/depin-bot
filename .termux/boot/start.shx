@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Cek apakah tmux session sudah jalan
+SESSION_NAME=mybot
+
+if ! tmux has-session -t $SESSION_NAME 2>/dev/null; then
+    cd ~/hitori,node || exit
+    tmux new-session -d -s $SESSION_NAME "bash sc"
+fi
